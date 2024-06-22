@@ -56,7 +56,7 @@ def create_vmd_script(molecule_file,orbital_file, background_color, molecule_sty
     #Defining movie style
     if movie_maker in ('yes', 'y'):
         vmd_script += f"""\
-        source /data/user4/Kevin/scripts/script_orbitals/rotation_animatied_gif.tcl
+        source /path/to/rotation_animatied_gif.tcl
         make_rotation_animated_gif
         """
 
