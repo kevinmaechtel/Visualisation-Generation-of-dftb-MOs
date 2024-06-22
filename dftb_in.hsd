@@ -17,7 +17,7 @@ MaxAngularMomentum = {
 }
 
 SlaterKosterFiles = Type2FileNames {
-        Prefix = "/home/wxie/test-parameters/MIO/Compressed/"
+        Prefix = "/path/to/SlaterKoser"
         Separator = ""
         Suffix = "-c.spl"
         LowerCaseTypeName = Yes
