@@ -79,7 +79,7 @@ print("Starting DFTB+ Calculation for generation of eigenvectors.")
 
 def run_dftb(molecule_xyz, elements):
     current_directory = os.getcwd()
-    shutil.copyfile('/home/user4/Kevin/scripts/script_orbitals/dftb_in.hsd', f"{current_directory}/dftb_in.hsd")
+    shutil.copyfile('/path/to/dftb_in.hsd', f"{current_directory}/dftb_in.hsd")
     res=[]
     old_lines=['<<< "in.xyz"',"#      C = 'p'","#      H = 's'","#      N = 'p'","#      O = 'p'"]
     new_lines=['<<< "'+molecule_xyz+'"']
@@ -110,7 +110,7 @@ print("Starting Calculation of the Orbital Cube files using waveplot.")
 
 def input_waveplot(num_orbital):
     current_directory = os.getcwd()
-    shutil.copyfile('/home/user4/Kevin/scripts/script_orbitals/waveplot_in.hsd', f"{current_directory}/waveplot_in.hsd")
+    shutil.copyfile('/path/to/waveplot_in.hsd', f"{current_directory}/waveplot_in.hsd")
     with fileinput.input(f'{current_directory}/waveplot_in.hsd', inplace=True) as file:
         for line in file:
             new_line = line.replace('  PlottedLevels = { 79 80 }                # Levels to plot', '  PlottedLevels = { '+num_orbital+' }                # Levels to plot')
@@ -191,7 +191,7 @@ def create_vmd_script(molecule_file,orbital_file, background_color, molecule_sty
     #Defining movie style
     if movie_maker in ('yes', 'y'):
         vmd_script += f"""\
-        source /data/user4/Kevin/scripts/script_orbitals/rotation_animatied_gif.tcl
+        source /path/to/rotation_animatied_gif.tcl
         make_rotation_animated_gif
         """
             
